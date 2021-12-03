@@ -34,10 +34,12 @@ export const AnimalList = () => {
             const owner = customers.find(c => c.id === animal.customerId)
             const clinic = locations.find(l => l.id === animal.location)
 
-            return <AnimalCard key={animal.id}
-                              location={clinic}
-                              customer={owner}
-                              animal={animal} />
+            return <AnimalCard 
+                          key={animal.id}
+                          location={clinic}
+                          customer={owner}
+                          animal={animal} 
+                  />
             })
           }
 

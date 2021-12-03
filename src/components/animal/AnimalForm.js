@@ -29,7 +29,7 @@ export const AnimalForm = () => {
 
     /*
     Reach out to the world and get customers state
-    and locations state on initialization.
+    and locations state on initialization. This is filling the locations within the dropdown menus.
     */
     useEffect(() => {
       getCustomers().then(getLocations)
@@ -63,7 +63,7 @@ export const AnimalForm = () => {
         //invoke addAnimal passing animal as an argument.
         //once complete, change the url and display the animal list
         addAnimal(animal)
-        .then(() => navigate("/animals"))
+        .then(() => navigate("/animals"))//telling it to useNavigate to redisplay updated animal list
       }
     }
 

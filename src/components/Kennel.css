@@ -37,6 +37,16 @@ strong {
 }
 
 address {
-  margin: 0 0 0.1em;
+  margin: 0.1em 0 0.1em;
   font-style: normal;
+}
+
+small {
+  background-color: rgb(238, 248, 251);
+  padding: 5px;
+}
+
+#root address {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

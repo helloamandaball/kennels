@@ -2,9 +2,11 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    text-align: center;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
 }
+

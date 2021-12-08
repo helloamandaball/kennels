@@ -31,13 +31,14 @@ export const LocationList = () => {
       <div className="locations">
           {console.log("LocationList: Render", locations)}
 
+          {/* .length of something??? Find the employees and animals match location's id, then get the count for each one */}
           {locations.map(location => {
             const employeeByLocation = location.employees.filter(e => e.locationId === location.id)
             const animalByLocation = location.animals.filter(a => a.locationId === location.id)
             // {console.log(employeeByLocation)}
             const employeeCount = employeeByLocation.length
             const animalCount = animalByLocation.length
-              return <LocationCard 
+              return <LocationCard      
                             key={location.id}
                             location={location}
                             employeeCount={employeeCount}

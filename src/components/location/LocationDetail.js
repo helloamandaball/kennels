@@ -15,6 +15,7 @@ export const LocationDetail = () => {
     console.log("useEffect", locationId)
     getLocationById(locationId)
     .then((response) => {
+      console.log(response)
       setLocation(response)
     })
     }, [])

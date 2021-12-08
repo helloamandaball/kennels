@@ -24,6 +24,13 @@ export const CustomerProvider = (props) => {
         .then(getCustomers)
     }
 
+    const deleteCustomer = customerId => {
+        return fetch(`http://localhost:8088/customerss/${customerId}`, {
+            method: "DELETE"
+        })
+            .then(getCustomers)
+    }
+
     /*
         You return a context provider which has the
         `customers` state, `getCustomers` function,
@@ -32,7 +39,7 @@ export const CustomerProvider = (props) => {
     */
     return (
         <CustomerContext.Provider value={{
-            customers, getCustomers, addCustomer
+            customers, getCustomers, addCustomer, deleteCustomer
         }}>
             {props.children}
         </CustomerContext.Provider>

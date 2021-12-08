@@ -11,4 +11,9 @@
       padding: 1em;
       border: 1px solid goldenrod;
   }
+
+.animal button {
+    margin-top: 10px;
+    margin-right: 10px;
+}
   

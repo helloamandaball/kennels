@@ -4,12 +4,20 @@ import { EmployeeContext } from "./EmployeeProvider"
 import "./Employee.css"
 
 export const EmployeeDetail = () => {
-  const { getEmployeeById } = useContext(EmployeeContext)
+  const { getEmployeeById, deleteEmployee } = useContext(EmployeeContext)
 
 	const [employee, setEmployee] = useState({})
 
 	const {employeeId} = useParams();
 	const navigate = useNavigate();
+
+  // Use for delete:
+  const handleRelease = () => {
+    deleteEmployee(employee.id)
+      .then(() => {
+        navigate("/employees")
+      })
+  }
 
   useEffect(() => {
     console.log("useEffect", employeeId)
@@ -23,6 +31,8 @@ export const EmployeeDetail = () => {
     <section className="employee">
       <h3 className="employee__name">{employee.name}</h3>
       <div className="employee__location">Location: {employee.location?.name}</div>
+      <button onClick={handleRelease}>Delete Employee</button>
+      <button onClick={() => {navigate(`/employees/edit/${employee.id}`)}}>Edit</button>
     </section>
   )
 }

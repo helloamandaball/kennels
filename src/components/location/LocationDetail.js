@@ -4,12 +4,20 @@ import { LocationContext } from "./LocationProvider"
 import "./Location.css"
 
 export const LocationDetail = () => {
-  const { getLocationById } = useContext(LocationContext)
+  const { getLocationById, deleteLocation } = useContext(LocationContext)
 
 	const [location, setLocation] = useState({})
 
 	const {locationId} = useParams();
 	const navigate = useNavigate();
+
+  // Use for delete:
+  const handleRelease = () => {
+    deleteLocation(location.id)
+      .then(() => {
+        navigate("/locations")
+      })
+  }
 
   useEffect(() => {
     console.log("useEffect", locationId)
@@ -28,14 +36,15 @@ export const LocationDetail = () => {
       <h3 className="location__employees">Employees</h3>
       <div className="location__employeeName">
         {location.employees?.map(employeeObj => <p key={employeeObj.id}>{employeeObj.name}</p>)}
-        {/* --employee list of names goes here-- */}
       </div>
       
       <h3 className="location__animals">Current Residents</h3>
       <div className="location__animalName">
         {location.animals?.map(animalObj => <p key={animalObj.id}>{animalObj.name}</p>)}
-        {/* --animal list of names goes here-- */}
       </div>
+
+      <button onClick={handleRelease}>Delete Location</button>
+      <button onClick={() => {navigate(`/locations/edit/${location.id}`)}}>Edit</button>
     </section>
   )
 }

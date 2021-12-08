@@ -25,18 +25,25 @@ export const ApplicationViews = () => {
             <Routes>
                 {/* Render the location list when http://localhost:3000/ */}
                 <Route path="/" element={<Home />} />
+
                 {/* Render the animal list when http://localhost:3000/animals */}
                 <Route path="animals/*" element={<AnimalList />} />
                 <Route path="animals/create/*" element={<AnimalForm />} />
                 <Route path="animals/edit/:animalId/*" element={<AnimalForm />} />
                 <Route path="animals/detail/:animalId/*" element={<AnimalDetail />} />
+
                 <Route path="locations/*" element={<LocationList />} />
                 <Route path="locations/create/*" element={<LocationForm />} />
+                <Route path="locations/edit/:locationId/*" element={<LocationForm />} />
                 <Route path="locations/detail/:locationId/*" element={<LocationDetail />} />
+
                 <Route path="customers/*" element={<CustomerList />} />
+
                 <Route path="employees/*" element={<EmployeeList />} />
                 <Route path="employees/create/*" element={<EmployeeForm />} />
+                <Route path="employees/edit/:employeeId/*" element={<EmployeeForm />} />
                 <Route path="employees/detail/:employeeId/*" element={<EmployeeDetail />} />
+
             </Routes>
         </LocationProvider>
         </EmployeeProvider>

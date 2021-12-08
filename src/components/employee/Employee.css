@@ -11,3 +11,8 @@
       padding: 1em;
       border: 1px solid goldenrod;
   }
+
+.employee button {
+    margin-top: 10px;
+    margin-right: 10px;
+}

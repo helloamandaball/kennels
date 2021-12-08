@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
+import { useNavigate, useParams } from 'react-router-dom';
 import { LocationContext } from "../location/LocationProvider"
 import { AnimalContext } from "../animal/AnimalProvider"
 import { CustomerContext } from "../customer/CustomerProvider"
 import "./Animal.css"
-import { useNavigate, useParams } from 'react-router-dom';
 
 export const AnimalForm = () => {
     const { addAnimal, getAnimalById, updateAnimal } = useContext(AnimalContext)
@@ -133,7 +133,8 @@ export const AnimalForm = () => {
             event.preventDefault() // Prevent browser from submitting the form and refreshing the page
             handleSaveAnimal()
           }}>
-        {animalId ? <>Save Animal</> : <>Add Animal</>}</button>
+          {animalId ? <>Save Animal</> : <>Add Animal</>}
+        </button>
       </form>
     )
 }

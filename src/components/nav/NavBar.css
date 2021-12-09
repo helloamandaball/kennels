@@ -8,5 +8,12 @@
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+    background: rgb(226, 250, 231);
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
 }
 
+#root ul {
+    padding-left: 0px;
+}

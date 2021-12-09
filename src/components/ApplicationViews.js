@@ -5,6 +5,7 @@ import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
 import { AnimalForm } from "./animal/AnimalForm"
 import { AnimalDetail } from "./animal/AnimalDetail"
+import { AnimalSearch } from "./animal/AnimalSearch"
 import { CustomerProvider } from "./customer/CustomerProvider"
 import { CustomerList } from "./customer/CustomerList"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
@@ -27,7 +28,7 @@ export const ApplicationViews = () => {
                 <Route path="/" element={<Home />} />
 
                 {/* Render the animal list when http://localhost:3000/animals */}
-                <Route path="animals/*" element={<AnimalList />} />
+                <Route path="animals/*" element={<><AnimalSearch /><AnimalList /></>} />
                 <Route path="animals/create/*" element={<AnimalForm />} />
                 <Route path="animals/edit/:animalId/*" element={<AnimalForm />} />
                 <Route path="animals/detail/:animalId/*" element={<AnimalDetail />} />
